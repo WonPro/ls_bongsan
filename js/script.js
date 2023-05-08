@@ -56,14 +56,15 @@ $(document).ready(function(){
 
   gsap.timeline({
     scrollTrigger: {
-      trigger: "#instragram",
+      trigger: "#section2",
+      offset: 100,
       start: "center center",
       end: "bottom top",
       scrub: true,
       pin: true
     }
   })
-    .from("#info",  { y: 5 });
+    .from("#info",  { y: 1000 });
 
   
   // AOS start
