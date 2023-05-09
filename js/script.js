@@ -31,6 +31,7 @@
 
 $(document).ready(function(){
 
+  /*
   $('#slide').slick({
     autoplay: true,
     autoplaySpeed: 2000,
@@ -38,6 +39,8 @@ $(document).ready(function(){
     arrows: false,
     dots: true,
   });
+  */
+
 
   $('#faqList .activeBtn').on('click', function(){
     let active = $(this).hasClass('active');
@@ -54,17 +57,33 @@ $(document).ready(function(){
     }
   });
 
-  gsap.timeline({
+  let sunrise = gsap.timeline({
     scrollTrigger: {
       trigger: "#section2",
-      offset: 100,
-      start: "center center",
+      start: "top top",
       end: "bottom top",
       scrub: true,
       pin: true
     }
   })
-    .from("#info",  { y: 1000 });
+  .from("#info",  { 
+    y: 3590,
+  });
+
+
+  let horizontalSlide = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#section4",
+      start: "top top",
+      end: "bottom top",
+      scrub: true,
+      pin: true
+    }
+  })
+  .to("#slide",  {x: "-25%"})
+  .to("#slide",  {x: "-50%"})
+  .to("#slide",  {x: "-75%"})
+  .to("purchase", {opacity: 0});
 
   
   // AOS start

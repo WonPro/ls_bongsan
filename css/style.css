@@ -14,8 +14,39 @@ section{
 	max-width: 430px;
 }
 
+.innerWrap{
+	padding-bottom: 5rem;
+}
+
 .font-aqua{
 	color: #416fe6;
+}
+
+@keyframes bounce {
+	0%{
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(-0.2rem);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+.btn.btn1{
+	width: 100%;
+	margin-top: 3rem;
+	padding: 2.6rem;
+	position: sticky;
+	bottom: 0;
+	left: 0;
+	background-color: #ff4794;
+	border: none;
+	border-radius: 0.8rem 0.8rem 0 0;
+	font-size: 2rem;
+	font-weight: bold;
+	color: #fff;
 }
 
 .header{
@@ -195,8 +226,10 @@ section{
 }
 
 #section2 .contBox.box2{
-	margin-top: -38.9rem;
+	width: calc(100% - 4rem);
 	padding: 2rem;
+	position: absolute;
+	top: 31rem;
 	background-color: #274289;
 	z-index: 10;
 }
@@ -253,7 +286,7 @@ section{
 
 
 #section2 .contBox.box2 .btnWrap{
-	margin-top: 2rem;
+	margin-top: 4rem;
 	display: flex;
 	gap: 1rem;
 }
@@ -305,6 +338,7 @@ section{
 	right: -10.5rem;
 	background: url(../img/img_section3_01.png) top right no-repeat;
 	background-size: cover;
+	animation: bounce 1s infinite;
 }
 
 #section3 .article1 .articleTitle{
@@ -387,6 +421,7 @@ section{
 	border-radius: 2rem;
 }
 
+
 #section3 .article3 .imgBox::after{
 	content: '';
 	width: 20.1rem;
@@ -396,6 +431,7 @@ section{
 	right: 0;
 	background: url(../img/img_section3_04.png) center center no-repeat;
 	z-index: 100;
+	animation: bounce 1s infinite;
 }
 
 #section3 .article3 .imgBox .imgDesc{
@@ -404,7 +440,7 @@ section{
 	background: url(../img/title_wow.svg) center center no-repeat;
 	background-size: contain;
 	margin: 0 7.1rem 0 auto;
-
+	animation: bounce 1.3s infinite;
 }
 
 #section3 .article3 .imgTitle{
@@ -419,7 +455,6 @@ section{
 	font-weight: normal;
 	text-align: left;
 }
-
 
 #section4{
 	padding-top: 3rem;
@@ -447,6 +482,8 @@ section{
 }
 
 #section4 .article1 #slide{
+	width: 400%;
+	display: flex;
 	margin-top: 2rem;
 }
 
@@ -455,10 +492,9 @@ section{
 }
 
 #section4 .article1 #slide .slideItem{
-	width: 100%;
-	height: 0;
+	width: calc(100% - 3rem);
+	height: 45rem;
 	margin: 0 1rem;
-	padding-top: 14.135%;
 	position: relative;
 	background-position: center bottom;
 	background-size: cover;
@@ -559,6 +595,7 @@ section{
 	top: -8rem;
 	right: -8rem;
 	background: url(../img/img_section4_02.png) center center / cover no-repeat;
+	animation: bounce 1.25s infinite;
 }
 
 
@@ -715,7 +752,7 @@ section{
 .footer .phoneNum{
 	display: flex;
 	align-items: center;
-	font-size: 2.4rem;
+	font-size: 2.2rem;
 	color: #fff;
 }
 
@@ -735,7 +772,7 @@ section{
 
 .footer .contact{
 	margin-top: 0.4rem;
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	color: #fff;
 }
 
