@@ -5,37 +5,22 @@
 *************************************/
 
 /* Wrap */
-.innerWrap{width: 100%; max-width: 430px; margin: 0 auto; padding-left: 10px; padding-right: 10px;}
+.innerWrap{width: 100%; max-width: 430px; margin: 0 auto; padding-left: 20px; padding-right: 20px;}
 
-.videoWrap{width: 100%; height: auto; position: relative; padding-top: 56.25%;}
+/* .videoWrap{width: 100%; height: auto; position: relative; padding-top: 56.25%;}
 .videoWrap iframe{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
-.videoWrap video{width: 100%; height: 100%; position: absolute; top: 0; left: 0;}
+.videoWrap video{width: 100%; height: 100%; position: absolute; top: 0; left: 0;} */
 
-@media screen and (min-width: 1199px){
+
+@media screen and (min-width: 768px){
 	.innerWrap{width: 100%; padding: 0 20px;}
 }
-@media screen and (max-width:767px){
+@media screen and (min-width: 1280px){
+	.innerWrap{width: 1280px;}
 	.mobileHide{display: none;}
 }
 
 /* Style */
-.float-l{float: left;} .float-r{float: right;}
-
-.overflow-h{overflow: hidden;}
-.overflow-xScroll{overflow-x: scroll;}
-.overflow-yScroll{overflow-y: scroll;}
-
-.border-b-blk{border-bottom: 1px solid #000;}
-.border-t-blk{border-top: 1px solid #000;}
-.border-b-gray{border-bottom: 1px solid #cecece;}
-.border-t-gray{border-top: 1px solid #cecece;}
-.border-b-navy{border-bottom: 1px solid #004098;}
-
-.word-breakAll{word-break: break-all;}
-.word-keepAll{word-break: keep-all; line-height: 1.2;}
-
-
-
 
 /***************************************
 *                  Box                 *

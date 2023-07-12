@@ -773,3 +773,63 @@ section{
 	color: #fff;
 	letter-spacing: normal;
 }
+
+.popupWrap{
+	width: 100%;
+	height: 100vh;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.popupWrap.on{
+	display: flex;
+}
+
+.popupWrap .popupFrame{
+	width: 100%;
+	height: 60vh;
+	padding: 4rem 2rem;
+	position: relative;
+	background-color: #fff;
+	border-radius: 2rem;
+}
+
+.popupTitle{
+	position: relative;
+	display: inline-block;
+	font-size: 2rem;
+}
+
+.popupTitle:after{
+	content: '';
+	width: 100%;
+	height: 1px;
+	position: absolute;
+	left: 0;
+	bottom: -0.5rem;
+	background-color: #282828;
+}
+
+.popupContent{
+	max-height: calc(60vh - 10rem);
+	margin-top: 2rem;
+	overflow-y: auto;
+}
+
+.closePopupBtn{
+	position: absolute;
+	right: 0rem;
+	top: -4rem;
+	background-color: transparent;
+	border: none;
+	font-size: 4rem;
+	color: #fff;
+	line-height: 1;
+}
