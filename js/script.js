@@ -31,7 +31,9 @@
 
 $(document).ready(function(){
 
-  /*
+  
+
+  // Section4의 수상기구 소개 슬라이드
   $('#slide').slick({
     autoplay: true,
     autoplaySpeed: 2000,
@@ -39,54 +41,65 @@ $(document).ready(function(){
     arrows: false,
     dots: true,
   });
-  */
 
+  let footerOffset = $('.footer').offset().top - $(window).height();
 
-  $('#faqList .activeBtn').on('click', function(){
+  $('#faqList .activeBtn').on('click', function() {
     let active = $(this).hasClass('active');
     let answer = $(this).parent().next('.answer');
 
-    if(!active){
+    if (!active) {
       $(this).addClass('active');
       answer.addClass('active');
       answer.slideDown(300);
+
+      // .activeBtn을 클릭할 때 footerOffset 값을 다시 계산
+      footerOffset = $('.footer').offset().top - $(window).height();
+      console.log(footerOffset);
+
+      // #purchase의 위치도 변경
+      if ($(window).scrollTop() > footerOffset) {
+        $('#purchase').removeClass('fixed');
+      }
     } else {
       $(this).removeClass('active');
       answer.removeClass('active');
       answer.slideUp(300);
+
+      // .activeBtn을 클릭할 때 footerOffset 값을 다시 계산
+      footerOffset = $('.footer').offset().top - $(window).height();
+      console.log(footerOffset);
+
+      // #purchase의 위치도 변경
+      if ($(window).scrollTop() <= footerOffset) {
+        $('#purchase').addClass('fixed');
+      }
     }
   });
 
-  let sunrise = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#section2",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-      pin: true
+  // 구매하기 버튼 효과
+
+  $(window).scroll(function() {
+
+    if ($(this).scrollTop() > 4000) {
+      $('#purchase').fadeIn(); // #purchase 요소를 나타나게 함
+    } else {
+      $('#purchase').fadeOut(); // #purchase 요소를 사라지게 함
     }
-  })
-  .from("#info",  { 
-    y: 3590,
+
+    if ($(this).scrollTop() <= footerOffset) {
+      if (!$('#purchase').hasClass('fixed')) {
+        $('#purchase').addClass('fixed');
+      }
+    } else {
+      if ($('#purchase').hasClass('fixed')) {
+        $('#purchase').removeClass('fixed');
+      }
+    }
   });
-
-
-  let horizontalSlide = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#section4",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-      pin: true
-    }
-  })
-  .to("#slide",  {x: "-25%"})
-  .to("#slide",  {x: "-50%"})
-  .to("#slide",  {x: "-75%"})
-  .to("purchase", {opacity: 0});
 
   
   // AOS start
-  // AOS.init();
+  AOS.init();
 
 });

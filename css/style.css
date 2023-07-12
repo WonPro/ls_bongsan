@@ -27,7 +27,7 @@ section{
 		transform: translateY(0);
 	}
 	50%{
-		transform: translateY(-0.2rem);
+		transform: translateY(-0.7rem);
 	}
 	100%{
 		transform: translateY(0);
@@ -36,17 +36,20 @@ section{
 
 .btn.btn1{
 	width: 100%;
-	margin-top: 3rem;
 	padding: 2.6rem;
-	position: sticky;
-	bottom: 0;
-	left: 0;
 	background-color: #ff4794;
 	border: none;
 	border-radius: 0.8rem 0.8rem 0 0;
 	font-size: 2rem;
 	font-weight: bold;
 	color: #fff;
+	z-index: 99;
+}
+
+#purchase.fixed{
+	position: fixed;
+	bottom: 0;
+	left: 0;
 }
 
 .header{
@@ -72,14 +75,23 @@ section{
 }
 
 #section1{
-	height: 100vh;
 	position: relative;
 	background-color: #fff;
 }
 
+#section1 .videoWrap{
+	width: 100%;
+	height: 0;
+	position: relative;
+	padding-top: 193.72093%;
+}
+
 #section1 .mainVisual{
 	width: 100%;
-	max-width: 430px;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
 
 #section1 .descWrap{
@@ -99,7 +111,6 @@ section{
 }
 
 #section2{
-	margin-top: -16rem;
 	padding-top: 11%;
 	padding-bottom: 2rem;
 	position: relative;
@@ -154,25 +165,15 @@ section{
 	width: 100%;
 	padding: 4rem 5.5rem;
 	position: relative;
-	border-radius: 0 0 0.8rem 0.8rem;
-}
-
-#section2 .contBox .boxTitle{
-	position: absolute;
-	top: -3rem;
-	left: 2rem;
-	font-size: 2.4rem;
-	font-weight: 600;
-	letter-spacing: -0.8px;
-	color: #416fe6;
+	border-radius: 0.8rem;
+	background: url(../img/bg_section2_insta.png)top center / cover no-repeat;
 }
 
 #section2 .contBox.box1{
 	margin-top: 6rem;
-	background-color: #fff;
 }
 
-#section2 .contBox.box1::before{
+/* #section2 .contBox.box1::before{
 	content: '';
 	width: 100%;
 	height: 0;
@@ -182,14 +183,14 @@ section{
 	left: 0;
 	background: url(../img/bg_section2_instar.png) top center no-repeat;
 	background-size: cover;
-}
+} */
 
 #section2 .contBox.box1 .imgFrame{
 	height: 0;
+	margin-top: 4rem;
 	padding-top: 100%;
 	border-radius: 0.8rem;
-	background: url(../img/bg_section2_insta.jpg) center center no-repeat;
-	background-size: cover;
+	background: url(../img/bg_section2_insta.jpg) center center / cover no-repeat;
 }
 
 
@@ -226,24 +227,9 @@ section{
 }
 
 #section2 .contBox.box2{
-	width: calc(100% - 4rem);
-	padding: 2rem;
-	position: absolute;
-	top: 31rem;
-	background-color: #274289;
-	z-index: 10;
-}
-
-#section2 .contBox.box2::before{
-	content: '';
-	width: 100%;
-	height: 0;
-	padding-top: 12.56410%;
-	position: absolute;
-	top: -3.4rem;
-	left: 0;
-	background: url(../img/bg_section2_info.png) top center no-repeat;
-	background-size: contain;
+	margin-top: 2rem;
+	padding: 4rem 2rem;
+	background: url(../img/bg_section2_info.png) top center / cover no-repeat;
 }
 
 #section2 .contBox.box2 .boxTitle{
@@ -308,8 +294,9 @@ section{
 }
 
 #section3{
-	background-color: #fff;
+	margin-top: 4rem;
 	padding-bottom: 13rem;
+	background-color: #fff;
 }
 
 #section3 .article1{
@@ -338,7 +325,7 @@ section{
 	right: -10.5rem;
 	background: url(../img/img_section3_01.png) top right no-repeat;
 	background-size: cover;
-	animation: bounce 1s infinite;
+	animation: bounce 1.5s infinite;
 }
 
 #section3 .article1 .articleTitle{
@@ -440,7 +427,7 @@ section{
 	background: url(../img/title_wow.svg) center center no-repeat;
 	background-size: contain;
 	margin: 0 7.1rem 0 auto;
-	animation: bounce 1.3s infinite;
+	animation: bounce 1.3s linear infinite;
 }
 
 #section3 .article3 .imgTitle{
@@ -482,7 +469,6 @@ section{
 }
 
 #section4 .article1 #slide{
-	width: 400%;
 	display: flex;
 	margin-top: 2rem;
 }
@@ -539,8 +525,10 @@ section{
 	width: 20rem;
 	height: 0.4rem;
 	margin: 2rem auto 0;
+	position: absolute;
+	left: calc(50% - 10rem);
+	bottom: -2rem;
 	display: flex;
-	position: static;
 	background-color: #f0f0f0;
 	border-radius: 4px;
 }
