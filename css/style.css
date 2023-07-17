@@ -1,12 +1,18 @@
 @charset "utf-8";
 
 body{
+	position: relative;
 	background-color: #7e9ce8;
 }
 
-#main{
+#header,
+#main,
+#footer{
 	max-width: 43rem;
 	margin: 0 auto;
+}
+
+#main{
 	background-color: #fff;
 	overflow: hidden;
 }
@@ -51,11 +57,13 @@ section{
 }
 
 #purchasePopupWrap.fixed{
+	max-width: 43rem;
 	width: 100%;
 	display: none;
 	position: fixed;
 	bottom: 0;
-	left: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 	z-index: 99;
 }   
 
@@ -63,7 +71,8 @@ section{
 	width: 100%;
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translate(-50%, 0);
 	background-color: rgba(255, 255, 255, 0.3);
 	z-index: 9999;
 }
