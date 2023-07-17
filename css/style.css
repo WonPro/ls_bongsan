@@ -4,10 +4,11 @@ body{
 	background-color: #7e9ce8;
 }
 
-.main{
+#main{
 	max-width: 43rem;
 	margin: 0 auto;
 	background-color: #fff;
+	overflow: hidden;
 }
 
 section{
@@ -43,25 +44,31 @@ section{
 	font-size: 2rem;
 	font-weight: bold;
 	color: #fff;
-	z-index: 99;
 }
 
-#purchase.fixed{
+#purchasePopupWrap{
+	position: relative;
+}
+
+#purchasePopupWrap.fixed{
+	width: 100%;
+	display: none;
 	position: fixed;
 	bottom: 0;
 	left: 0;
-}
+	z-index: 99;
+}   
 
-.header{
+#header{
 	width: 100%;
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	background-color: rgba(255, 255, 255, 0.3);
 	z-index: 9999;
 }
 
-.header .logo{
+#header .logo{
 	padding-top: 2.6rem;
 	padding-bottom: 2.6rem;
 	text-align: center;
@@ -74,19 +81,19 @@ section{
 	overflow: hidden;
 }
 
-#section1{
+#mainVisual{
 	position: relative;
 	background-color: #fff;
 }
 
-#section1 .videoWrap{
+#mainVisual .videoWrap{
 	width: 100%;
 	height: 0;
 	position: relative;
 	padding-top: 193.72093%;
 }
 
-#section1 .mainVisual{
+#mainVisual .mainVisual{
 	width: 100%;
 	height: 100%;
 	position: absolute;
@@ -94,7 +101,7 @@ section{
 	left: 0;
 }
 
-#section1 .descWrap{
+#mainVisual .descWrap{
 	display: inline-block;
 	position: absolute;
 	top: calc(50% - 2.4rem);
@@ -103,14 +110,14 @@ section{
 	z-index: 10;
 }
 
-#section1 .descWrap p{
+#mainVisual .descWrap p{
 	margin-bottom: 0.4rem;
 	font-size: 2rem;
 	font-weight: normal;
 	color: #fff;
 }
 
-#section2{
+#info{
 	padding-top: 11%;
 	padding-bottom: 2rem;
 	position: relative;
@@ -118,7 +125,7 @@ section{
 	text-align: center;
 }
 
-#section2::before{
+#info::before{
 	content: '';
 	width: 100%;
 	height: 0;
@@ -126,10 +133,10 @@ section{
 	position: absolute;
 	top: -1px;
 	left: 0;
-	background: url(../img/bg_section2_header.png) top center no-repeat;
+	background: url(../img/bg_info_header.png) top center no-repeat;
 }
 
-#section2::after{
+#info::after{
 	content: '';
 	width: 100%;
 	height: 0;
@@ -137,43 +144,43 @@ section{
 	position: absolute;
 	bottom: -4rem;
 	left: 0;
-	background: url(../img/bg_section2_footer.png) top center no-repeat;
+	background: url(../img/bg_info_footer.png) top center no-repeat;
 }
 
-#section2 *{
+#info *{
 	color: #fff;
 }
 
-#section2 .subTitle{
+#info .subTitle{
 	margin-top: 9rem;
 	font-size: 1.8rem;
 }
 
-#section2 .secTitle{
+#info .secTitle{
 	margin-top: 0.5rem;
 	font-size: 4.2rem;
 	font-weight: bold;
 	letter-spacing: -0.8px;
 }
 
-#section2 .contText{
+#info .contText{
 	font-size: 2rem;
 	line-height: 1.4;
 }
 
-#section2 .contBox{
+#info .contBox{
 	width: 100%;
 	padding: 4rem 5.5rem;
 	position: relative;
 	border-radius: 0.8rem;
-	background: url(../img/bg_section2_insta.png)top center / cover no-repeat;
+	background: url(../img/bg_info_insta.png)top center / cover no-repeat;
 }
 
-#section2 .contBox.box1{
+#info .contBox.box1{
 	margin-top: 6rem;
 }
 
-/* #section2 .contBox.box1::before{
+/* #info .contBox.box1::before{
 	content: '';
 	width: 100%;
 	height: 0;
@@ -181,27 +188,27 @@ section{
 	position: absolute;
 	top: -40px;
 	left: 0;
-	background: url(../img/bg_section2_instar.png) top center no-repeat;
+	background: url(../img/bg_info_instar.png) top center no-repeat;
 	background-size: cover;
 } */
 
-#section2 .contBox.box1 .imgFrame{
+#info .contBox.box1 .imgFrame{
 	height: 0;
 	margin-top: 4rem;
 	padding-top: 100%;
 	border-radius: 0.8rem;
-	background: url(../img/bg_section2_insta.jpg) center center / cover no-repeat;
+	background: url(../img/img_info_insta.jpg) center center / cover no-repeat;
 }
 
 
-#section2 .contBox.box1 .iconWrap{
+#info .contBox.box1 .iconWrap{
 	margin-top: 1rem;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-#section2 .contBox.box1 .iconWrap .icon{
+#info .contBox.box1 .iconWrap .icon{
 	width: 2.3rem;
 	height: 2rem;
 	background-size: contain;
@@ -209,34 +216,34 @@ section{
 	background-repeat: no-repeat;
 }
 
-#section2 .contBox.box1 .iconWrap .flexWrap{
+#info .contBox.box1 .iconWrap .flexWrap{
 	gap: 0.2rem;
 }
 
-#section2 .contBox.box1 .iconWrap .icon.heart{background-image: url(../img/icon_section2_heart.svg);}
-#section2 .contBox.box1 .iconWrap .icon.chat{background-image: url(../img/icon_section2_chat.svg);}
-#section2 .contBox.box1 .iconWrap .icon.dm{background-image: url(../img/icon_section2_dm.svg);}
-#section2 .contBox.box1 .icon.bookmark{background-image: url(../img/icon_section2_marking.svg);}
+#info .contBox.box1 .iconWrap .icon.heart{background-image: url(../img/icon_info_heart.svg);}
+#info .contBox.box1 .iconWrap .icon.chat{background-image: url(../img/icon_info_chat.svg);}
+#info .contBox.box1 .iconWrap .icon.dm{background-image: url(../img/icon_info_dm.svg);}
+#info .contBox.box1 .icon.bookmark{background-image: url(../img/icon_info_marking.svg);}
 
 
-#section2 .contBox.box1 .text{
+#info .contBox.box1 .text{
 	margin-top: 1rem;
 	text-align: left;
 	font-size: 1.4rem;
 	color: #282828;
 }
 
-#section2 .contBox.box2{
+#info .contBox.box2{
 	margin-top: 2rem;
 	padding: 4rem 2rem;
-	background: url(../img/bg_section2_info.png) top center / cover no-repeat;
+	background: url(../img/bg_info_info.png) top center / cover no-repeat;
 }
 
-#section2 .contBox.box2 .boxTitle{
+#info .contBox.box2 .boxTitle{
 	top: -2rem;
 	color: #fff;
 }
-#section2 .contBox.box2 .itemWrap{
+#info .contBox.box2 .itemWrap{
 	padding: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -245,24 +252,24 @@ section{
 	text-align: left;
 }
 
-#section2 .contBox.box2 .itemWrap:first-of-type{
+#info .contBox.box2 .itemWrap:first-of-type{
 	border: none;
 }
 
-#section2 .contBox.box2 .itemWrap .itemTitle{
+#info .contBox.box2 .itemWrap .itemTitle{
 	font-size: 1.4rem;
 	font-weight: 700;
 	color: #bacbf6;
 }
 
-#section2 .contBox.box2 .itemWrap .itemText{
+#info .contBox.box2 .itemWrap .itemText{
 	margin-top: 0.5rem;
 	font-size: 1.4rem;
 	font-weight: 400;
 	color: #fff;
 }
 
-#section2 .contBox.box2 .itemWrap .btn{
+#info .contBox.box2 .itemWrap .btn{
 	padding: 0.8rem 2rem;
 	border-radius: 0.8rem;
 	font-size: 1.4rem;
@@ -271,13 +278,13 @@ section{
 }
 
 
-#section2 .contBox.box2 .btnWrap{
+#info .contBox.box2 .btnWrap{
 	margin-top: 4rem;
 	display: flex;
 	gap: 1rem;
 }
 
-#section2 .contBox.box2 .btnWrap .btn{
+#info .contBox.box2 .btnWrap .btn{
 	flex: auto;
 	padding-top: 2.6rem;
 	padding-bottom: 2.6rem;
@@ -288,89 +295,89 @@ section{
 	color: #274289;
 }
 
-#section2 .contBox.box2 .btnWrap .btn.btn-pink{
+#info .contBox.box2 .btnWrap .btn.btn-pink{
 	background-color: #FF4794;
 	color: #fff;
 }
 
-#section3{
+#subVisual{
 	margin-top: 4rem;
 	padding-bottom: 13rem;
 	background-color: #fff;
 }
 
-#section3 .article1{
+#subVisual .article1{
 	padding-top: 14rem;
-	background: url(../img/bg_section3_01.jpg) top center no-repeat;
+	background: url(../img/bg_subVisual_01.jpg) top center no-repeat;
 	background-size: 100% 63rem;
 }
 
-#section3 .article1 .imgBox{
+#subVisual .article1 .imgBox{
 	width: 100%;
 	height: 53rem;
 	margin-bottom: 3rem;
 	padding-top: 10rem;
 	position: relative;
-	background: url(../img/bg_section3_02.jpg) center center no-repeat;
+	background: url(../img/bg_subVisual_02.jpg) center center no-repeat;
 	background-size: cover;
 	border-radius: 2rem;
 }
 
-#section3 .article1 .imgBox:after{
+#subVisual .article1 .imgBox:after{
 	content: '';
 	width: 24rem;
 	height: 24rem;
 	position: absolute;
 	bottom: 2rem;
 	right: -10.5rem;
-	background: url(../img/img_section3_01.png) top right no-repeat;
+	background: url(../img/img_subVisual_01.png) top right no-repeat;
 	background-size: cover;
 	animation: bounce 1.5s infinite;
 }
 
-#section3 .article1 .articleTitle{
+#subVisual .article1 .articleTitle{
 	height: 13.8em;
 	position: relative;
 	background: url(../img/title_bongsan.svg) center center no-repeat;
 }
 
-#section3 .article .contText{
+#subVisual .article .contText{
 	font-size: 1.8rem;
 	text-align: center;
 }
 
-#section3 .article .contText:first-child{
+#subVisual .article .contText:first-child{
 	margin-top: 0;
 }
 
-#section3 .article1 .contText{
+#subVisual .article1 .contText{
 	margin-top: 0.5rem;
 }
 
-#section3 .article2{
+#subVisual .article2{
 	padding-top: 17rem;
 	position: relative;
-	background: url(../img/bg_section3_03.png) -18rem top no-repeat;
+	background: url(../img/bg_subVisual_03.png) -18rem top no-repeat;
 	background-size: 364px 515px;
 }
 
-#section3 .article2 .articleTitle{
+#subVisual .article2 .articleTitle{
 	width: 31.7rem;
 	height: 11.8rem;
 	margin: 0 0 0 auto;
 	background: url(../img/title_bongsanLeisure.svg) center center no-repeat;
 }
 
-#section3 .article2 .imgBox{
+#subVisual .article2 .imgBox{
 	width: calc(75% - 16px);
 	height: 40rem;
 	margin: 3.4rem 0 0 auto;
-	background: url(../img/img_section3_02.jpg) center center no-repeat;
+	background: url(../img/img_subVisual_02.jpg) center center no-repeat;
 	background-size: cover;
 	border-radius: 2rem;
 }
 
-#section3 .article2 .imgBox .imgDesc{
+#subVisual .article2 .imgBox .imgDesc{
 	width: 18.4rem;
 	height: 20rem;
 	margin-left: 6rem;
@@ -379,7 +386,7 @@ section{
 	background-size: contain;
 }
 
-#section3 .article2 .imgTitle{
+#subVisual .article2 .imgTitle{
 	margin-top: 2.4rem;
 	font-size: 2.8rem;
 	font-weight: bold;
@@ -387,41 +394,41 @@ section{
 	text-align: right;
 }
 
-#section3 .article2 .contText{
+#subVisual .article2 .contText{
 	margin-top: 0.6rem;
 	font-weight: normal;
 	text-align: right;
 }
 
-#section3 .article3{
+#subVisual .article3{
 	margin-top: 13rem;
 }
 
-#section3 .article3 .imgBox{
+#subVisual .article3 .imgBox{
 	width: 100%;
 	height: 33rem;
 	margin-left: 2rem;
 	padding-top: 0.5rem;
 	position: relative;
-	background: url(../img/img_section3_03.jpg) center center no-repeat;
+	background: url(../img/img_subVisual_03.jpg) center center no-repeat;
 	background-size: cover;
 	border-radius: 2rem;
 }
 
 
-#section3 .article3 .imgBox::after{
+#subVisual .article3 .imgBox::after{
 	content: '';
 	width: 20.1rem;
 	height: 15.3rem;
 	position: absolute;
 	bottom: -6rem;
 	right: 0;
-	background: url(../img/img_section3_04.png) center center no-repeat;
+	background: url(../img/img_subVisual_04.png) center center no-repeat;
 	z-index: 100;
 	animation: bounce 1s infinite;
 }
 
-#section3 .article3 .imgBox .imgDesc{
+#subVisual .article3 .imgBox .imgDesc{
 	width: 14.5rem;
 	height: 10.4rem;
 	background: url(../img/title_wow.svg) center center no-repeat;
@@ -430,26 +437,26 @@ section{
 	animation: bounce 1.3s linear infinite;
 }
 
-#section3 .article3 .imgTitle{
+#subVisual .article3 .imgTitle{
 	margin-top: 2.4rem;
 	font-size: 2.8rem;
 	font-weight: bold;
 	color: #416fe6;
 }
 
-#section3 .article3 .contText{
+#subVisual .article3 .contText{
 	margin-top: 0.8rem;
 	font-weight: normal;
 	text-align: left;
 }
 
-#section4{
+#subVisual02{
 	padding-top: 3rem;
 	position: relative;
 	background-color: #fff;
 }
 
-#section4::before{
+#subVisual02::before{
 	content: '';
 	width: 100%;
 	height: 42rem;
@@ -460,7 +467,7 @@ section{
 	border-radius: 0 0 2rem 2rem;
 }
 
-#section4 .article1 .articleTitle{
+#subVisual02 .article1 .articleTitle{
 	width: 100%;
 	height: 15.2rem;
 	position: relative;
@@ -468,16 +475,16 @@ section{
 	z-index: 10;
 }
 
-#section4 .article1 #slide{
+#subVisual02 .article1 #slide{
 	display: flex;
 	margin-top: 2rem;
 }
 
-#section4 .article1 #slide .slick-list{
+#subVisual02 .article1 #slide .slick-list{
 	padding: 0 3rem 0 1rem;
 }
 
-#section4 .article1 #slide .slideItem{
+#subVisual02 .article1 #slide .slideItem{
 	width: calc(100% - 3rem);
 	height: 45rem;
 	margin: 0 1rem;
@@ -488,12 +495,12 @@ section{
 	border-radius: 2rem;
 }
 
-#section4 .article1 #slide .slideItem.item1{background-image: url(../img/../img/img_section4_slide01.jpg);}
-#section4 .article1 #slide .slideItem.item2{background-image: url(../img/../img/img_section4_slide01.jpg);}
-#section4 .article1 #slide .slideItem.item3{background-image: url(../img/../img/img_section4_slide01.jpg);}
-#section4 .article1 #slide .slideItem.item4{background-image: url(../img/../img/img_section4_slide01.jpg);}
+#subVisual02 .article1 #slide .slideItem.item1{background-image: url(../img/../img/img_subVisual02_slide01.jpg);}
+#subVisual02 .article1 #slide .slideItem.item2{background-image: url(../img/../img/img_subVisual02_slide01.jpg);}
+#subVisual02 .article1 #slide .slideItem.item3{background-image: url(../img/../img/img_subVisual02_slide01.jpg);}
+#subVisual02 .article1 #slide .slideItem.item4{background-image: url(../img/../img/img_subVisual02_slide01.jpg);}
 
-#section4 .article1 #slide .slideItem .descBox{
+#subVisual02 .article1 #slide .slideItem .descBox{
 	height: 17.4rem;
 	padding: 4rem 3rem;
 	position: absolute;
@@ -503,17 +510,17 @@ section{
 	border-radius: 2rem 2rem 0 0;
 }
 
-#section4 .article1 #slide .slideItem .descBox .itemTitle{
+#subVisual02 .article1 #slide .slideItem .descBox .itemTitle{
 	font-size: 2.2rem;
 	font-weight: bold;
 	color: #416fe6;
 }
 
-#section4 .article1 #slide .slideItem .descBox .itemTitle .small{
+#subVisual02 .article1 #slide .slideItem .descBox .itemTitle .small{
 	font-size: 1.6rem;
 }
 
-#section4 .article1 #slide .slideItem .descBox .itemDesc{
+#subVisual02 .article1 #slide .slideItem .descBox .itemDesc{
 	margin-top: 1rem;
 	font-size: 1.6rem;
 	line-height: 1.4;
@@ -521,7 +528,7 @@ section{
 	color: #416fe6;
 }
 
-#section4 .article1 #slide .slick-dots{
+#subVisual02 .article1 #slide .slick-dots{
 	width: 20rem;
 	height: 0.4rem;
 	margin: 2rem auto 0;
@@ -533,32 +540,32 @@ section{
 	border-radius: 4px;
 }
 
-#section4 .article1 #slide .slick-dots li{
+#subVisual02 .article1 #slide .slick-dots li{
 	width: 25%;
 	height: 0.4rem;
 	margin: 0;
 	border-radius: 4px;
 }
 
-#section4 .article1 #slide .slick-dots li.slick-active{
+#subVisual02 .article1 #slide .slick-dots li.slick-active{
 	background-color: #416fe6;
 }
 
-#section4 .article1 #slide .slick-dots li button{
+#subVisual02 .article1 #slide .slick-dots li button{
 	width: 100%;
 	height: 100%;
 }
 
-#section4 .article1 #slide .slick-dots li button:before{
+#subVisual02 .article1 #slide .slick-dots li button:before{
 	content: none;
 }
 
-#section4 .article2{
+#subVisual02 .article2{
 	margin-top: 24rem;
 	position: relative;
 }
 
-#section4 .article2 .articleTitle{
+#subVisual02 .article2 .articleTitle{
 	width: 29.3rem;
 	height: 13.8rem;
 	position: absolute;
@@ -567,76 +574,76 @@ section{
 	background: url(../img/title_summer.svg) center center / contain no-repeat;
 }
 
-#section4 .article2 .imgBox{
+#subVisual02 .article2 .imgBox{
 	width: 100%;
 	height: 26rem;
 	position: relative;
-	background: url(../img/img_section4_01.png) center center / cover no-repeat;
+	background: url(../img/img_subVisual02_01.png) center center / cover no-repeat;
 	border-radius: 2rem;
 }
 
-#section4 .article2 .imgBox::after{
+#subVisual02 .article2 .imgBox::after{
 	content: '';
 	width: 16rem;
 	height: 16rem;
 	position: absolute;
 	top: -8rem;
 	right: -8rem;
-	background: url(../img/img_section4_02.png) center center / cover no-repeat;
+	background: url(../img/img_subVisual02_02.png) center center / cover no-repeat;
 	animation: bounce 1.25s infinite;
 }
 
 
-#section4 .article2 .txtBox{
+#subVisual02 .article2 .txtBox{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 }
 
-#section4 .article2 .txtBox .imgTitle{
+#subVisual02 .article2 .txtBox .imgTitle{
 	font-size: 2.8rem;
 	font-weight: bold;
 	color: #416fe6;
 }
 
-#section4 .article2 .txtBox .imgDesc{
+#subVisual02 .article2 .txtBox .imgDesc{
 	margin-top: 1rem;	
 	font-size: 1.8rem;
 }
 
 
-#section5{
+#subVisual03{
 	margin-top: 15rem;
 	padding-bottom: 5rem;
-	background: url(../img/bg_section3_01.jpg) center 15rem / cover no-repeat;
+	background: url(../img/bg_subVisual_01.jpg) center 15rem / cover no-repeat;
 }
 
-#section5 .secTitle{
+#subVisual03 .secTitle{
 	width: 19.5rem;
 	height: 6.7rem;
 	margin: 0 auto;
 	background: url(../img/title_happyTrip.svg) center center / contain no-repeat;
 }
 
-#section5 .contText{
+#subVisual03 .contText{
 	margin-top: 0.7rem;
 	font-size: 1.8rem;
 	text-align: center;
 }
 
-#section5 .contText:first-child{
+#subVisual03 .contText:first-child{
 	margin-top: 3rem;
 }
 
-#section5 .imgBox{
+#subVisual03 .imgBox{
 	margin-top: 3rem;
 	height: 0;
 	padding-top: 92.3077%;
 	position: relative;
-	background: url(../img/img_section5_01.png) center center / cover no-repeat;
+	background: url(../img/img_subVisual03_01.png) center center / cover no-repeat;
 }
 
-#section5 .imgBox .imgTitle{
+#subVisual03 .imgBox .imgTitle{
 	width: 19.4rem;
 	height: 6.5rem;
 	position: absolute;
@@ -647,63 +654,63 @@ section{
 
 
 
-#section6{
+#faq{
 	padding-top: 8rem;
 	padding-bottom: 8rem;
 
 }
 
-#section6 .secTitle{
+#faq .secTitle{
 	font-size: 3.6rem;
 	font-weight: bold;
 	text-align: center;
 }
 
 
-#section6 .faqList{
+#faq .faqList{
 	margin-top: 2rem;
 	padding: 1.5rem;
 	background-color: #f8f8f8;
 	border-radius: 1rem;
 }
 
-#section6 .faqList .question{
+#faq .faqList .question{
 	padding: 1.8rem 0;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-#section6 .faqList .question:first-child{padding-top: 0;}
-#section6 .faqList .question:last-child{padding-bottom: 0;}
+#faq .faqList .question:first-child{padding-top: 0;}
+#faq .faqList .question:last-child{padding-bottom: 0;}
 
-#section6 .faqList .question .title{
+#faq .faqList .question .title{
 	display: flex;
 	align-items: center;
 	font-size: 1.8rem;
 	color: #494949;
 }
 
-#section6 .faqList .question .title .icon{
+#faq .faqList .question .title .icon{
 	margin-right: 1rem;;
 	font-size: 3.2em;
 	font-weight: bold;
 	color: #416fe6;
 }
 
-#section6 .faqList .question .btn.activeBtn{
+#faq .faqList .question .btn.activeBtn{
 	width: 2.8rem;
 	height: 2.8rem;
-	background: url(../img/icon_section5_showBtn.svg) center center / cover no-repeat;
+	background: url(../img/icon_faq_showBtn.svg) center center / cover no-repeat;
 	border: none;
 	border-radius: 50%;
 }
 
-#section6 .faqList .question .btn.activeBtn.active{
-	background: url(../img/icon_section5_closeBtn.svg) center center / cover no-repeat;
+#faq .faqList .question .btn.activeBtn.active{
+	background: url(../img/icon_faq_closeBtn.svg) center center / cover no-repeat;
 }
 
-#section6 .faqList .answer{
+#faq .faqList .answer{
 	padding: 1.2rem 2.5rem 1.2rem 1rem;
 	display: none;
 	background-color: #fff;
@@ -711,8 +718,7 @@ section{
 	font-size: 0;
 }
 
-
-#section6 .faqList .answer .icon{
+#faq .faqList .answer .icon{
 	width: 2rem;
 	padding-right: 0.8rem;
 	display: inline-block;
@@ -722,7 +728,7 @@ section{
 	color: #416fe6;
 }
 
-#section6 .faqList .answer .context{
+#faq .faqList .answer .context{
 	width: calc(100% - 2rem);
 	display: inline-block;
 	vertical-align: top;
@@ -732,24 +738,24 @@ section{
 	line-height: 1.4;
 }
 
-.footer{
+#footer{
 	padding: 6rem 3rem;
 	background-color: #2a2a2a;
 }
 
-.footer .phoneNum{
+#footer .phoneNum{
 	display: flex;
 	align-items: center;
 	font-size: 2.2rem;
 	color: #fff;
 }
 
-.footer a{
+#footer a{
 	font-size: inherit;
 	color: inherit;
 }
 
-.footer .email{
+#footer .email{
 	margin-top: 1.2rem;
 	display: flex;
 	align-items: center;
@@ -758,13 +764,13 @@ section{
 	color: #fff;
 }
 
-.footer .contact{
+#footer .contact{
 	margin-top: 0.4rem;
 	font-size: 1.4rem;
 	color: #fff;
 }
 
-.footer .copyright{
+#footer .copyright{
 	margin-top: 2.6rem;
 	display: block;
 	font-size: 1.2em;
@@ -774,62 +780,280 @@ section{
 	letter-spacing: normal;
 }
 
-.popupWrap{
+#pop{
 	width: 100%;
 	height: 100vh;
-	padding-left: 2rem;
-	padding-right: 2rem;
 	display: none;
-	justify-content: center;
-	align-items: center;
 	position: fixed;
 	top: 0;
 	left: 0;
-	background-color: rgba(0,0,0,0.8);
 }
 
-.popupWrap.on{
+#pop.on{
+	display: block;
+}
+
+#pop .popupFrame{
+	width: 100vw;
+	height: 100vh;
 	display: flex;
-}
-
-.popupWrap .popupFrame{
-	width: 100%;
-	height: 60vh;
-	padding: 4rem 2rem;
+	flex-direction: column;
+	justify-content: space-between;
 	position: relative;
 	background-color: #fff;
-	border-radius: 2rem;
 }
 
-.popupTitle{
-	position: relative;
-	display: inline-block;
-	font-size: 2rem;
-}
-
-.popupTitle:after{
-	content: '';
-	width: 100%;
-	height: 1px;
-	position: absolute;
-	left: 0;
-	bottom: -0.5rem;
-	background-color: #282828;
+.contTitle{
+	margin-bottom: 1rem;
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: #888;
 }
 
 .popupContent{
-	max-height: calc(60vh - 10rem);
 	margin-top: 2rem;
+	margin-bottom: 2rem;
+	padding: 4rem 2rem 0;
+	flex-grow: 0;
 	overflow-y: auto;
 }
 
-.closePopupBtn{
-	position: absolute;
-	right: 0rem;
-	top: -4rem;
-	background-color: transparent;
+.popupContent ul{
+	margin-bottom: 2rem;
+	padding-top: 2rem;
+	padding-bottom: 1.9rem;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.popupContent ul:last-of-type{
+	margin-bottom: 0;
+	padding-bottom: 0;
 	border: none;
-	font-size: 4rem;
+}
+
+.popupContent li{
+	padding-left: 1rem;
+}
+
+.popupContent li,
+.popupContent li p{
+	font-size: 1.6rem;
+	line-height: 1.4;
+	color: #888;
+}
+
+.popupContent li::before{
+	content: '*';
+	margin-left: -1rem;
+	padding-right: 0.5rem;
+	font-size: 1.2rem;
+}
+
+.closePopupBtn{
+	width: 100%;
+	padding-top: 1.8rem;
+	padding-bottom: 1.8rem;
+	background-color: #494949;
+	border: none;
+	font-size: 2rem;
 	color: #fff;
 	line-height: 1;
+}
+
+
+.popup-container {
+  width: 100%;
+	max-height: calc(100vh - 3rem);
+	display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+	max-height: calc(100vh - 10.6rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+	overflow-y: auto;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.product-selection{
+	width: 100%;
+	padding: 2rem;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.product-selection select{
+	width: 100%;
+	padding: 1.6rem 2rem;
+	border: 1px solid #bfbfc3;
+	border-radius: 0.5rem;
+	font-size: 1.6rem;
+	line-height: 1;
+	color: #282828;
+}
+
+.product-selection option{
+	font-size: 1.6rem;
+}
+
+.selected-products {
+	width: 100%;
+}
+
+.selected-products ul {
+	width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.selected-products li {
+	padding: 2rem;
+  display: flex;
+	flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+	border-bottom: 1px solid #e2e2e3;
+}
+
+.product-info {
+	width: 100%;
+  display: flex;
+	justify-content: space-between;
+  align-items: center;
+}
+
+.product-sequence {
+	margin-right: 1rem;
+	font-size: 1.6rem;
+}
+
+.product-name {
+  margin-right: 1rem;
+	flex-grow: 1;
+	font-size: 1.6rem;
+}
+
+.delete-button {
+  background-color: transparent;
+  color: #999;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  color: #666;
+}
+
+.quantity-info {
+	width: 100%;
+  display: flex;
+	justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.decrease-button,
+.increase-button {
+  background-color: transparent;
+  color: #999;
+  border: 1px solid #ccc;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.4rem;
+}
+
+.decrease-button{
+	border-radius: 4px 0 0 4px;
+	border-right: none;
+}
+
+.increase-button{
+	border-radius: 0 4px 4px 0;
+	border-left: none;
+}
+
+.quantity-input {
+  width: 4.4rem;
+  height: 3rem;
+  border: 1px solid #ccc;
+  padding: 3px 6px;
+  text-align: center;
+  font-size: 14px;
+	line-height: 1;
+	overflow: hidden;
+}
+
+.quantity-input:disabled{
+	background-color: #fff;
+}
+
+.summary-item {
+	width: 100%;
+	padding: 2rem;
+  display: flex;
+	justify-content: space-between;
+  align-items: center;
+}
+
+.total-quantity,
+.total-price {
+	font-size: 1.6rem;
+}
+
+.purchase-button {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.purchase-button:hover {
+  background-color: #0c7fd7;
+}
+
+.close-button {
+	width: 14rem;
+	height: 3rem;
+  position: absolute;
+  top: -3rem;
+  left: calc(50% - 7rem);
+  background-color: #fff;
+  border: none;
+	border-radius: 0.5rem 0.5rem 0 0;
+	box-shadow: 0 -5px 4px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  color: #999;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #666;
+}
+
+.close-button .icon{
+	width: 1.6rem;
+	height: 0.8rem;
+	background: url(../img/icon_purchase_closeBtn.svg) center center / cover no-repeat;
 }

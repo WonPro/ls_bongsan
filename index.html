@@ -41,14 +41,14 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<main class="main" role="main">
-		<header class="header">
-			<a href="">
-				<h1 class="logo">봉산수상레저파크</h1>
-			</a>
-		</header>
-		
-		<section id="section1">
+	<header id="header">
+		<a href="">
+			<h1 class="logo">봉산수상레저파크</h1>
+		</a>
+	</header>
+
+	<main id="main" role="main">		
+		<section id="mainVisual">
 			<div class="videoWrap">
 				<video class="mainVisual" muted autoplay loop>
 					<source src="video/main_visual.mp4" type="video/mp4">
@@ -61,7 +61,7 @@
 			</h2>
 		</section>
 
-		<section id="section2">
+		<section id="info">
 			<div class="innerWrap">
 				<p id="trigger" class="subTitle">천혜의 자연을 느낄 수 있는 수상레저</p>
 				<h2 class="secTitle">봉산수상레저파크</h2>
@@ -84,7 +84,7 @@
 					<p class="text">즐거운 수상레저 즐기기~</p>
 				</div>
 
-				<div id="info" class="contBox box2">
+				<div id="information" class="contBox box2">
 					<div class="itemWrap">
 						<div class="flexWrap col">
 							<h4 class="itemTitle">주소</h4>
@@ -117,7 +117,7 @@
 			</div>
 		</section>
 
-		<section id="section3" data-aos="fade-up" data-aos-offset="200">
+		<section id="subVisual" data-aos="fade-up" data-aos-offset="200">
 			<article class="article article1">
 				<div class="innerWrap">
 					<div class="imgBox" data-aos="fade-up" data-aos-offset="300">
@@ -160,7 +160,7 @@
 			</article>
 		</section>
 
-		<section id="section4">
+		<section id="subVisual02">
 			<article class="article article1">
 				<div class="innerWrap">
 					<h2 class="articleTitle">
@@ -211,7 +211,7 @@
 			</article>
 		</section>
 
-		<section id="section5">
+		<section id="subVisual03">
 			<div class="innerWrap">
 				<h2 class="secTitle">
 					<span class="hide">해피 트립</span>
@@ -226,7 +226,7 @@
 			</div>
 		</section>
 
-		<section id="section6">
+		<section id="faq">
 			<div class="innerWrap">
 				<h2 class="secTitle"><span class="font-aqua">F</span>AQ</h2>
 				<dl id="faqList" class="faqList">
@@ -273,42 +273,86 @@
 			</div>
 		</section>
 
-		<button type="button" id="purchase" class="btn btn1">구매</button>
+		<div id="purchasePopupWrap">
+			<div class="popup-container">
+				<div class="popup-content">
+					<button class="close-button">
+						<span class="icon"></span>
+						<span class="hide">닫기</span>
+					</button>
+					<div class="product-selection">
+						<select id="product">
+							<option value="" disabled selected>상품을 선택해 주세요</option>
+							<!-- 추가적인 상품 옵션을 추가할 수 있습니다. -->
+						</select>
+					</div>
+					<div class="selected-products">
+						<ul id="selected-product-list">
+							<!-- 선택된 상품 목록이 동적으로 추가됩니다. -->
+						</ul>
+					</div>
+					
+					<div class="summary-item">
+						<span id="totalQuantity" class="total-quantity">총 구매갯수: 0개</span>
+						<span id="totalPrice" class="total-price">총 가격: 0원</span>
+					</div>				
 
-		<footer class="footer">
-			<p class="phoneNum">
-				<span class="font-aqua">T.&nbsp;</span>
-				<a href="tel.1899-2973" class="font-bold">1899-2973</a>
-				<span>&nbsp;/&nbsp;</span>
-				<a href="tel.055-933-1978">055)933-1978</a>
-			</p>
-			<p class="email">
-				<span class="font-aqua">E.&nbsp;</span>
-				<a href="email.k2ski1973@hanmail.net">k2ski1973@hanmail.net</a>
-			</p>
-			<div class="mt30">
-				<p class="contact">경상남도 합천군 봉산명 서부로 4270-8 | 대표 : 윤웅주</p>
-				<p class="contact">사업자등록번호 : 611-81-22878 | FAX 055)933-1974</p>
-			</div>
-	
-			<small class="copyright">COPYRIGHT(C) 봉산수상레저파크 ALL RIGHTS RESERVED.</small>
-		</footer>
+				</div>
+				<button id="purchaseBtn" class="btn btn1">구매하기</button>
+			</div>	
+			
+			<button type="button" id="purchasePageBtn" class="btn btn1">구매</button>
+		</div>
 	</main>
 
-	<div id="popupWrap" class="popupWrap">
+	<div id="pop">
 		<div id="popupNotice" class="popupFrame popup">
-			<h2 class="popupTitle">유의사항</h2>
 			<div class="popupContent">
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>				
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>			
-				<p style="font-size: 1.6rem;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea ipsum expedita quia? Ullam adipisci soluta, fuga corrupti quisquam voluptatibus molestias maiores accusantium possimus nulla vel animi nisi vitae. Omnis, architecto.</p>			
+				<h2 class="contTitle">[이용안내]</h2>
+				<ul>
+					<li>기구점검 및 점심시간 13시 부터 14시까지 이용 제한</li>
+					<li>워터파크 각 시간 50분 이용, 10분 휴식</li>
+					<li>놀이기구 매 정시 이용, 10분 휴식</li>
+					<li>아쿠아삭스 이용 필수</li>
+					<li>놀이기구는 인원 및 연령에 따라 선택이 제한 될 수 있습니다.</li>
+					<li>조종면허시험 일정에는 14시부터 이용가능 합니다.<br>
+						<p><span class="font-aqua">[7월]</span> 4일 / 17일 / 25일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="font-aqua">[8월]</span> 8일 / 16일 / 28일</p>
+						<p><span class="font-aqua">[9월]</span> 5일 / 19일</p>
+					</li>
+				</ul>
+				<h2 class="contTitle">[유의사항]</h2>
+				<ul>
+					<li>안전상의 시설점검으로 (기상상황 및 내부사정)으로 사전 공지 없이 일부 시설이용에 제한이 있을 수 있습니다.</li>
+					<li>주말 및 공휴일, 단체 등으로 혼잡할 수 있으며, 대기시간이 발생 할 수 있습니다.</li>
+					<li>만14세 이하 어린이는 부모 동반 시 입장이 가능하며, 어린이의 안전을 위해 반드시 보호자와 함께 이용하여 주시기 바랍니다.</li>
+					<li>흡연은 지정된 구역에서만 가능합니다. </li>
+					<li>외부 음식 반입 시 쓰레기는 가지고 가셔야 합니다. </li>
+					<li>쓰레기 무단투기 금지 (합천군 쓰레기봉투 외에 다른 봉투 등을 사용하여 쓰레기를 버릴 경우 100만 이하의 과태료가 부과 될 수 있습니다.)</li>
+					<li>반려동물 동반 입장 시 목줄 및 이동장은 필수입니다.</li>
+				</ul>
 			</div>
-			<button type="button" class="closePopupBtn" onclick="closePopup('Notice')">&times;</button>
+			<button type="button" class="closePopupBtn" onclick="closePopup('Notice')">닫기</button>
 		</div>
 	</div>
+
+	<footer id="footer">
+		<p class="phoneNum">
+			<span class="font-aqua">T.&nbsp;</span>
+			<a href="tel.1899-2973" class="font-bold">1899-2973</a>
+			<span>&nbsp;/&nbsp;</span>
+			<a href="tel.055-933-1978">055)933-1978</a>
+		</p>
+		<p class="email">
+			<span class="font-aqua">E.&nbsp;</span>
+			<a href="email.k2ski1973@hanmail.net">k2ski1973@hanmail.net</a>
+		</p>
+		<div class="mt30">
+			<p class="contact">경상남도 합천군 봉산명 서부로 4270-8 | 대표 : 윤웅주</p>
+			<p class="contact">사업자등록번호 : 611-81-22878 | FAX 055)933-1974</p>
+		</div>
+
+		<small class="copyright">COPYRIGHT(C) 봉산수상레저파크 ALL RIGHTS RESERVED.</small>
+	</footer>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js?r=5426"></script>
