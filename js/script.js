@@ -152,88 +152,88 @@ $(document).ready(function(){
     });
 
     // 선택된 상품 목록 업데이트 함수
-function updateSelectedProductList() {
-  let selectedProductList = $('#selected-product-list');
-  selectedProductList.empty();
+    function updateSelectedProductList() {
+      let selectedProductList = $('#selected-product-list');
+      selectedProductList.empty();
 
-  let totalQuantity = 0; // 총 구매갯수를 계산하기 위한 변수 추가
+      let totalQuantity = 0; // 총 구매갯수를 계산하기 위한 변수 추가
 
-  $.each(selectedProducts, function(index, product) {
-    let listItem = $('<li>');
+      $.each(selectedProducts, function(index, product) {
+        let listItem = $('<li>');
 
-    // 순번, 상품명, 삭제 버튼
-    let productInfo = $('<div>').addClass('product-info');
-    let sequence = (index + 1).toString().padStart(2, '0');
-    let sequenceSpan = $('<span>').addClass('product-sequence').text(sequence);
-    let nameSpan = $('<span>').addClass('product-name').text(product.name);
-    let deleteButton = $('<button>').addClass('delete-button').text('X');
-    deleteButton.click(function() {
-      // 선택된 상품 삭제
-      selectedProducts.splice(index, 1);
+        // 순번, 상품명, 삭제 버튼
+        let productInfo = $('<div>').addClass('product-info');
+        let sequence = (index + 1).toString().padStart(2, '0');
+        let sequenceSpan = $('<span>').addClass('product-sequence').text(sequence);
+        let nameSpan = $('<span>').addClass('product-name').text(product.name);
+        let deleteButton = $('<button>').addClass('delete-button').text('X');
+        deleteButton.click(function() {
+          // 선택된 상품 삭제
+          selectedProducts.splice(index, 1);
 
-      // 선택된 상품 목록 업데이트
-      updateSelectedProductList();
+          // 선택된 상품 목록 업데이트
+          updateSelectedProductList();
 
-      // 총 가격 업데이트
-      updateTotalPrice();
-    });
-    productInfo.append(sequenceSpan, nameSpan, deleteButton);
-    listItem.append(productInfo);
+          // 총 가격 업데이트
+          updateTotalPrice();
+        });
+        productInfo.append(sequenceSpan, nameSpan, deleteButton);
+        listItem.append(productInfo);
 
-    // 수량 조절, 수량, 총 금액
-    let quantityInfo = $('<div>').addClass('quantity-info');
-    let quantityControls = $('<div>').addClass('quantity-controls');
-    let decreaseButton = $('<button>').addClass('decrease-button').text('-');
-    let increaseButton = $('<button>').addClass('increase-button').text('+');
-    let quantityInput = $('<input>').attr('type', 'number').attr('value', product.quantity).attr('min', '1').addClass('quantity-input').prop('disabled', true);
-    let totalPrice = $('<div>').addClass('total-price').text((product.price * product.quantity).toLocaleString() + '원');
-    decreaseButton.click(function() {
-      if (product.quantity > 1) {
-        product.quantity--;
-        quantityInput.val(product.quantity);
-        totalPrice.text((product.price * product.quantity).toLocaleString() + '원');
-        getTotalQuantity();
-        updateTotalPrice();
-      }
-    });
-    increaseButton.click(function() {
-      product.quantity++;
-      quantityInput.val(product.quantity);
-      totalPrice.text((product.price * product.quantity).toLocaleString() + '원');
-      getTotalQuantity();
-      updateTotalPrice();
-    });
-    quantityControls.append(decreaseButton, quantityInput, increaseButton);
-    quantityInfo.append(quantityControls, totalPrice);
-    listItem.append(quantityInfo);
-    totalQuantity += product.quantity;
+        // 수량 조절, 수량, 총 금액
+        let quantityInfo = $('<div>').addClass('quantity-info');
+        let quantityControls = $('<div>').addClass('quantity-controls');
+        let decreaseButton = $('<button>').addClass('decrease-button').text('-');
+        let increaseButton = $('<button>').addClass('increase-button').text('+');
+        let quantityInput = $('<input>').attr('type', 'number').attr('value', product.quantity).attr('min', '1').addClass('quantity-input').prop('disabled', true);
+        let totalPrice = $('<div>').addClass('total-price').text((product.price * product.quantity).toLocaleString() + '원');
+        decreaseButton.click(function() {
+          if (product.quantity > 1) {
+            product.quantity--;
+            quantityInput.val(product.quantity);
+            totalPrice.text((product.price * product.quantity).toLocaleString() + '원');
+            getTotalQuantity();
+            updateTotalPrice();
+          }
+        });
+        increaseButton.click(function() {
+          product.quantity++;
+          quantityInput.val(product.quantity);
+          totalPrice.text((product.price * product.quantity).toLocaleString() + '원');
+          getTotalQuantity();
+          updateTotalPrice();
+        });
+        quantityControls.append(decreaseButton, quantityInput, increaseButton);
+        quantityInfo.append(quantityControls, totalPrice);
+        listItem.append(quantityInfo);
+        totalQuantity += product.quantity;
 
-    selectedProductList.append(listItem);
-  });
+        selectedProductList.append(listItem);
+      });
 
-  // 총 구매갯수 업데이트
-  $('#totalQuantity').text('총 구매갯수: ' + totalQuantity + '개');
-}
+      // 총 구매갯수 업데이트
+      $('#totalQuantity').text('총 구매수량 ' + totalQuantity + '개');
+    }
 
-// 총 가격 업데이트 함수
-function updateTotalPrice() {
-  let totalPrice = selectedProducts.reduce(function(acc, product) {
-    return acc + (product.price * product.quantity);
-  }, 0);
+    // 총 가격 업데이트 함수
+    function updateTotalPrice() {
+      let totalPrice = selectedProducts.reduce(function(acc, product) {
+        return acc + (product.price * product.quantity);
+      }, 0);
 
-  $('#totalPrice').text('총 가격: ' + totalPrice.toLocaleString() + '원');
-}
+      $('#totalPrice').text('합계 ' + totalPrice.toLocaleString() + '원');
+    }
 
-// 선택된 상품의 총 구매갯수를 계산하는 함수
-function getTotalQuantity() {
-  let totalQuantity = 0;
-  selectedProducts.forEach(function(product) {
-    totalQuantity += product.quantity;
-  });
+    // 선택된 상품의 총 구매갯수를 계산하는 함수
+    function getTotalQuantity() {
+      let totalQuantity = 0;
+      selectedProducts.forEach(function(product) {
+        totalQuantity += product.quantity;
+      });
 
-  $('#totalQuantity').text('총 구매갯수: ' + totalQuantity + '개');
-  return totalQuantity;
-}
+      $('#totalQuantity').text('총 구매수량 ' + totalQuantity + '개');
+      return totalQuantity;
+    }
 
     // 팝업 닫기 버튼 클릭 시 처리
     $('.close-button').click(function() {

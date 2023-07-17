@@ -1023,9 +1023,13 @@ section{
   align-items: center;
 }
 
-.total-quantity,
-.total-price {
+.total-price,
+.total-quantity{
 	font-size: 1.6rem;
+}
+#totalPrice {
+	font-size: 2rem;
+	font-weight: bold;
 }
 
 .purchase-button {
